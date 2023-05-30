@@ -13,6 +13,7 @@
     "marked": "^5.0.3",
     "marked-gfm-heading-id": "^3.0.3",
     "marked-mangle": "^1.0.1",
+    "moment": "^2.29.4",
     "notiflix": "^3.2.6",
     "vue": "^3.3.2",
     "vue-router": "^4.2.0",

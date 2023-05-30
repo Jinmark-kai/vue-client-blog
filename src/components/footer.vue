@@ -1,6 +1,6 @@
 <template>
      <footer>
-        Copyright © 2023 🚀 Astro JinKai
+        Copyright © 2023 🚀 JinKai
      </footer>
 </template>
 
@@ -10,6 +10,10 @@
     }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+footer {
+    padding-top: 5rem;
+    padding-bottom: 1rem;
+    text-align: center;
+}
 </style>

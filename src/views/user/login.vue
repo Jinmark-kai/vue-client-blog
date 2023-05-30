@@ -55,7 +55,7 @@ export default {
       this.$store.commit("auth/setUser", JSON.stringify(user));
       this.$store.commit("auth/setToken", token);
       this.$not.Notify.success("登录成功");
-      this.$router.push("/")
+      window.location.href ="/"
       try {
       } catch (err) {
         console.log(err)
