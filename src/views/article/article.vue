@@ -24,6 +24,7 @@
         <span>点赞数: {{ articleParams.like_count }}</span>
       </div>
     </div>
+    <hr class="hr-solid-content" data-content="本文完" />
     <div class="comment">
       <div v-if="isLogin">
         <label for="content">发表评论:</label>
@@ -89,7 +90,7 @@ export default {
       // 评论信息列表
       commentList: [],
       // 留言内容
-      content: "",
+      content: ""
       // 上下文信息
       // updownInfo: {},
     };
@@ -248,5 +249,27 @@ export default {
   padding: .5rem;
   color: var(--theme-text);
   cursor: pointer;
+}
+.hr-solid-content {
+  overflow:hidden;
+    color: #a2a9b6;
+    border: 0;
+    font-size: 12px;
+    padding: 1em 0;
+    position: relative;
+    margin: 1rem 0;
+}
+.hr-solid-content::before {
+    content: attr(data-content);
+    position: absolute;
+    padding: 0 1ch;
+    line-height: 1px;
+    border: solid #d0d0d5;
+    border-width: 0 99vw;
+    width: fit-content;
+    /* for 不支持fit-content浏览器 */
+    white-space: nowrap;
+    left: 50%;
+    transform: translateX(-50%);
 }
 </style>

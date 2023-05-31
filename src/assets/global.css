@@ -1,6 +1,7 @@
 :root {
   color-scheme: light;
-  --theme-bg: #fafafa;
+  --theme-bg: #eff1f5;
+  --theme-card-bg: #ffffff;
   --theme-link: #567c77;
   --theme-text: #22272a;
   --theme-accent: #cc2a42;
@@ -11,7 +12,8 @@
 }
 :root.dark {
   color-scheme: dark;
-  --theme-bg: #1d1f21;
+  --theme-bg: #0e141b;
+  --theme-card-bg: #1e262f;
   --theme-link: #d480aa;
   --theme-text: #c9cacc;
   --theme-menu-bg: rgb(29 31 33 / 0.85);
@@ -61,9 +63,9 @@ html body {
   background-color: #f9f9f9;
 }
 
-::selection {
-  color: rbg(50, 143, 254);
-}
+/* ::selection {
+  color: rgb(50, 143, 254);
+} */
 
 a {
   color: inherit;

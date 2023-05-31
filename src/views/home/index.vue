@@ -9,7 +9,10 @@
           <Social />
         </section>
     </header>
-    <h1 class="index_top">文章</h1>
+    <h1 class="index_top">
+      <span>文章</span>
+      <span class="top_total">文章数量:{{ total }}</span>
+    </h1>
     <div v-for="(item, index) in articleList" :key="index">
       <div class="card">
         <router-link :to="'/article/' + item.id">
@@ -17,6 +20,7 @@
           <p class="card_des">描述:{{ item.description }}</p>
           <p class="card_time">创建时间:{{ item.created }}</p>
         </router-link>
+        <span v-if="item.is_top == '0'" class="card_top"></span>
       </div>
     </div>
     <!-- 侧边 -->
@@ -45,7 +49,7 @@ export default {
       // 分页获取文章列表
       articleList: [],
       current: 1,
-      size: 2,
+      size: 10,
       total: 0,
     };
   },
@@ -81,16 +85,34 @@ export default {
 
 <style scoped>
 .index_top {
+  display: flex;
+  justify-content: space-between;
   margin-top: 4rem;
   margin-bottom: 2rem;
+}
+.top_total {
+  font-size: .5em;
 }
 .hotArticle {
   margin-bottom: 2rem;
 }
 .card {
+  position: relative;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 1rem;
+  background-color: var(--theme-card-bg);
+  border-radius: .5rem;
+}
+.card_top {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-width: 2rem 0 0 2rem;
+  top: 0;
+  right: 0;
+  border-style: solid;
+  border-color: var(--theme-accent) transparent transparent transparent;
 }
 .card:hover {
   box-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;

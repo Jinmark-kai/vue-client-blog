@@ -50,7 +50,7 @@
 .mk p {
   margin: 1em 0;
   line-height: 1.6;
-  text-indent: 2em;
+  /* text-indent: 2em; */
 }
 
 .mk a {
