@@ -3,7 +3,7 @@
   <ul class="cat_ul">
     <li v-for="(item, index) in categoryList" :key="index" class="cat_li">
       <span>{{ item.categoryName }}</span>
-      <span class="cat_count">(文章数:{{ item.categoryCount }})</span>
+      <span class="cat_count">(文章数:<span style="font-weight: 700;">{{ item.categoryCount }}</span>)</span>
       <ul class="cat_info">
         <li v-for="(article, idx) in item.list" :key="idx">
           <router-link :to="`/article/${article.id}`">{{ article.title }}</router-link>
@@ -46,7 +46,7 @@ ul, ol {
   font-size: 2rem;
 }
 .cat_count {
-  font-size: 0.5rem;
+  font-size: 0.8rem;
 }
 .cat_info {
   margin: 1rem 0;
@@ -55,6 +55,6 @@ ul, ol {
   line-height: 2em;
 }
 .cat_info a {
-  text-decoration: blue underline;
+  text-decoration: var(--theme-cat-link) wavy underline;
 }
 </style>

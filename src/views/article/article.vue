@@ -202,7 +202,7 @@ export default {
   margin: 0;
   display: block;
   text-align: right;
-  font-size: 0.6rem;
+  font-size: 0.8rem;
 }
 .comment_user {
   font-size: 0.8rem;
@@ -242,13 +242,17 @@ export default {
 }
 .comment_not {
   text-align: center;
-  color: ;
 }
 .comment_btn {
-  border: 0;
-  padding: .5rem;
-  color: var(--theme-text);
+  padding: 0.5rem 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 0.25rem;
   cursor: pointer;
+}
+.comment_btn:hover {
+  background-color: #0069d9;
 }
 .hr-solid-content {
   overflow:hidden;

@@ -9,6 +9,7 @@
   --theme-quote: #cc2a42;
   --theme-menu-bg: rgb(250 250 250 / 0.85);
   --theme-mk-block-bg: #ededed;
+  --theme-cat-link: #0000ff;
 }
 :root.dark {
   color-scheme: dark;
@@ -21,6 +22,7 @@
   --theme-accent-2: #eee;
   --theme-quote: #ccffb6;
   --theme-mk-block-bg: #1c1212;
+  --theme-cat-link: #ffffff;
 }
 
 html body {
@@ -37,7 +39,7 @@ html body {
   padding-top: 4rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
   font-size: 0.875rem;
-  line-height: 1.25rem;
+  /* line-height: 1.25rem; */
   font-weight: 400;
   color: var(--theme-text);
   -webkit-font-smoothing: antialiased;
@@ -73,4 +75,27 @@ a {
 }
 ul,ol {
     padding: 0;
+}
+
+/*一下来自张鑫旭响应式最佳实践*/
+html {
+  font-size: 14px;
+}
+@media screen and (min-width: 375px) {
+  html {
+/*     375px作为16px基准，414px宽度时正好对应18px的根字号大小   */
+      font-size: calc(14px + 2 * (100vw - 375px) / 39);
+  }
+}
+@media screen and (min-width: 414px) {
+/*  屏幕宽度414px到1000px，根字号大小累积增加4px（18px-22px)  */
+  html {
+      font-size: calc(16px + 4 * (100vw - 414px) / 586);
+  }
+}
+@media screen and (min-width: 1000px) {
+  html {
+/*    屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px    */
+      font-size: calc(18px + 5 * (100vw - 1000px) / 1000);
+  }
 }

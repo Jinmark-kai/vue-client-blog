@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Btn from "./dark.vue"
+import Btn from "./dark.vue";
 import { RouterLink } from "vue-router";
 export default {
   computed: {
@@ -32,18 +32,17 @@ export default {
   },
   components: {
     Btn
-  }
+  },
 };
-
 </script>
 
 <style scoped>
 .nav {
   display: flex;
-  margin-bottom: 4.5rem;
+  margin-bottom: 2.5rem;
+  align-items: center;
 }
 .nav a {
-  line-height: 20px;
   padding-inline: 0.5rem;
   text-decoration: none;
   color: var(--theme-accent);
@@ -56,11 +55,13 @@ export default {
   text-decoration: underline var(--theme-accent);
 }
 
-.loginuser,.loginBtn {
+.loginuser,
+.loginBtn {
   margin-left: auto;
 }
 .loginuser::before {
   content: "欢迎用户:";
-  font-size: .5em;
+  font-size: 0.5em;
 }
+
 </style>

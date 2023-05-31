@@ -108,19 +108,20 @@ export default {
 
 .form-group {
   margin-bottom: 1rem;
+  display: flex;
 }
 
 .form-label {
   display: inline-block;
-  width: 100px;
+  width: calc(7.1429rem - 10 * (100vw - 1000px) / 1000);
   font-weight: bold;
 }
 
 .form-input {
   display: inline-block;
-  width: calc(100% - 120px);
+  width: calc(100% - 7.1429rem);
   padding: 0.5rem;
-  border: 1px solid #999;
+  border: 0.0714rem solid #999;
   border-radius: 0.25rem;
 }
 

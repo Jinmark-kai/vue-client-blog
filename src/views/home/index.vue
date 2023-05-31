@@ -115,7 +115,7 @@ export default {
   border-color: var(--theme-accent) transparent transparent transparent;
 }
 .card:hover {
-  box-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
+  box-shadow: 0 1.4286rem 1.7857rem -0.3571rem #0000001a, 0 0.5714rem 0.7143rem -0.4286rem #0000001a;
     transform: scale(102%);
     border-radius: .5rem;
     transition: all .15s;
@@ -131,12 +131,11 @@ export default {
 .aside {
   position: fixed;
   top: 5rem;
-  right: 2rem;
+  right: 1rem;
   order: 2;
   padding: 1rem;
   border: 1px solid var(--theme-accent);
-  width: 10rem;
-
+  width: 9rem;
 }
 
 .aside p {

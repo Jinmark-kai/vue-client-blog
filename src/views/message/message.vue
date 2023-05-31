@@ -76,7 +76,7 @@ export default {
 
 .form-label {
   display: inline-block;
-  width: 80px;
+  width: 7.1429rem;
   font-weight: bold;
 }
 
@@ -90,7 +90,7 @@ export default {
 }
 
 .form-textarea {
-  height: 120px;
+  height: 8.5714rem;
   resize: vertical;
 }
 
