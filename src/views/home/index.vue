@@ -41,6 +41,7 @@ export default {
   created() {
     this.getHotArticle();
     this.getArticleList();
+    this.getAddview()
   },
   data() {
     return {
@@ -76,6 +77,10 @@ export default {
         this.$not.Notify.failure("文章加载失败");
       }
     },
+    // 添加网页访问量
+    async getAddview() {
+      this.$http.put("/config/addView")
+    }
   },
   components: {
     Social

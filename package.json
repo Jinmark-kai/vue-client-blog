@@ -2,6 +2,11 @@
   "name": "vue-client",
   "version": "0.0.0",
   "private": true,
+  "author": {
+    "name": "Jinmark-kai",
+    "email": "ch_kaijack@outlook.com",
+    "url": "https://chkaiblog.eu.org"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
