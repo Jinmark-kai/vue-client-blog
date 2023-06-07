@@ -19,6 +19,7 @@
       </div>
 
       <div v-highlight v-html="markdown" class="mk"></div>
+      <div class="mk_footer" v-if="articleParams.origin_url">转载:{{ articleParams.origin_url }}</div>
       <div class="lovebox">
         <p @click="likeCount" class="love">❤️</p>
         <span>点赞数: {{ articleParams.like_count }}</span>
@@ -275,5 +276,11 @@ export default {
     white-space: nowrap;
     left: 50%;
     transform: translateX(-50%);
+}
+.mk_footer {
+  text-align: right;
+  font-size: .5em;
+  color: #a29d9d;
+  margin-top: 1rem;
 }
 </style>

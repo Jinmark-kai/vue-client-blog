@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Notiflix from "./notiflix"
 
 const instance = axios.create({
     baseURL: import.meta.env.VITE_APIURL,
@@ -34,6 +35,14 @@ instance.interceptors.response.use(
         return response.data
     },
     err => {
+        const { code } = err.response.data
+        if (code == 1002) {
+            Notiflix.Notify.failure("登录失效，重新登录！", {
+                timeout: 2000
+            })
+            localStorage.clear()
+            window.location.href = '/login';
+        }
         return Promise.reject(err)
     }
 )

@@ -24,5 +24,8 @@ app.directive('highlight', function (el) {
 // vue3写法 将http公共方法挂在到vue实例$http中
 app.config.globalProperties.$http = http
 app.config.globalProperties.$not = Notiflix
+// app.config.errorHandler = () => null;
+// // 屏蔽警告信息
+// app.config.warnHandler = () => null;
 
 app.mount('#app')
