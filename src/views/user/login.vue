@@ -54,23 +54,23 @@ export default {
   methods: {
     // 用户登录
     async login() {
-      const { result } = await this.$http.post("/user/login", this.loginData);
-      const { token, ...user } = result;
-      this.$store.commit("auth/setUser", JSON.stringify(user));
-      this.$store.commit("auth/setToken", token);
-      this.$not.Notify.success("登录成功");
-      window.location.href = "/";
       try {
+        const { result } = await this.$http.post("/user/login", this.loginData);
+        const { token, ...user } = result;
+        this.$store.commit("auth/setUser", JSON.stringify(user));
+        this.$store.commit("auth/setToken", token);
+        this.$not.Notify.success("登录成功");
+        window.location.href = "/";
       } catch (err) {
-        console.log(err);
-        this.$not.Notify.failure("登陆失败");
+        const { message } = err.response.data;
+        this.$not.Notify.failure(message || "登录失败");
       }
     },
     // 注册用户
     async register() {
       try {
         let { result } = await this.$http.post("/user/register", this.registerData);
-        console.log(result)
+        console.log(result);
         this.$not.Notify.success(`${result}快去登录吧~`);
         // this.isLogin = true;
       } catch (err) {
