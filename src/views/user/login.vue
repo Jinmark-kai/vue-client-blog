@@ -25,7 +25,7 @@
         </div>
         <div class="form-group">
           <label for="password" class="form-label">密码：</label>
-          <input type="password" id="password" name="password" required v-model="registerData.password1" class="form-input" />
+          <input type="password" id="password" name="password" required v-model="registerData.password" class="form-input" />
         </div>
         <button @click="register" class="form-btn">注册</button>
         <a href="#" @click="isLogin = true" data-login>已有账号？请登录</a>
@@ -69,10 +69,9 @@ export default {
     // 注册用户
     async register() {
       try {
-        let { result } = await this.$http.post("/user/register", this.registerData);
-        console.log(result);
-        this.$not.Notify.success(`${result}快去登录吧~`);
-        // this.isLogin = true;
+        await this.$http.post("/user/register", this.registerData);
+        this.$not.Notify.success(`快去登录吧~`);
+        this.isLogin = true;
       } catch (err) {
         const { message } = err.response.data;
         this.$not.Notify.failure(message);
